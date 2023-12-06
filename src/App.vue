@@ -1,40 +1,25 @@
 
-<script>
-export default{
-    setup(){
-      const StudentName = "Riya Diya Hiya"
-const Roll = 2344
-function AssignmentDate(){
-  return "10th December, 2023"
-}
+<script setup>
+// const image ='https://images.unsplash.com/photo-1701600713431-01e520efca61?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+// const title = 'Dark night image'
+// const link = 'https://unsplash.com/photos/a-view-of-a-city-skyline-at-dusk-DEKef3v8KJA'
+const images=[{
+    image:'https://images.unsplash.com/photo-1701600713431-01e520efca61?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title:'Dark night image',
+    link:'https://unsplash.com/photos/a-view-of-a-city-skyline-at-dusk-DEKef3v8KJA'
+}]
 
-//create object
-const student = {  
-  fname:"Riya",
-  mname:"Diya",
-  lname:"Hiya",
-  getFullName(){
-    return this.fname +" "+ this.mname + " "+ this.lname
-  }
-}
-return{
-  StudentName,Roll,AssignmentDate,student
-}
-    }
-}
 </script>
 <template>
- <h1>Student Name: {{ StudentName }}</h1>
-<h2>Student Roll: {{ Roll }}</h2>
-<h3>Assignment Submission Date: {{ AssignmentDate() }}</h3>
-
-<h4>First name is: {{ student.fname }}</h4>
-<h4>Middle name is: {{ student.mname }}</h4>
-<h4>Last name is: {{ student.lname }}</h4>
-<h4>Full name is: {{ student.getFullName() }}</h4>
+<img :src="images[0].image">
+<h3>{{ images[0].title }}</h3>
+<a :href="images[0].link">Click to view City Skyline image</a>
 </template>
 
 <style scoped>
+img{
+    width: 400px;
+}
 </style>
 
 
